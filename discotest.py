@@ -1,7 +1,10 @@
 import discord
+import os
+from dotenv import main
+import os
+main.load_dotenv()
 
 
-Token = 'MTAyNjc2ODk1OTA3MDAyNzgyNg.GpTerO.ZdTZg4a5DkEO5O3Z5xU6HLfrzRjgBWT9P7DDgw'
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -36,4 +39,4 @@ class MyClient(discord.Client):
 intents = discord.Intents.default()
 intents.message_content = True
 client = MyClient(intents=intents)
-client.run(Token)
+client.run(os.getenv('pass'))
